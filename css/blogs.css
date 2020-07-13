@@ -1,0 +1,27 @@
+#imp-links {
+  font-size: 1.2em;
+  color: #3caea3;
+}
+
+main {
+  background-color: #173f5f;
+}
+.footer-wrapper,
+footer {
+  padding-top: 10px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  color: #173f5f;
+}
+.footer-wrapper ul {
+  list-style: none;
+}
+#copyleft {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  text-align: center;
+}

@@ -1,0 +1,681 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="blogs.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body,
+      html {
+        background-color: #173f5f;
+        color: white;
+      }
+      .images{
+        width:100%;
+        height:auto;
+      }
+      h1,h2
+      {
+        color: #3caea3;
+      }
+
+      h3,h5{
+        color:#f6d55c;
+      }
+      article,p,.t {
+        font-size: 1.2em;
+      }
+header{
+  background-color: white;
+}
+      pre{
+        color:white;
+      }
+      #imp-links {
+  font-size: 1.2em;
+  color: #3caea3;
+}
+        .footer-wrapper,footer {
+  padding-top:20px;
+          bottom: 0px;
+          left: 0;
+          right:0;
+          width: 100%;
+          height: auto;
+          background-color: white;
+          color: #173f5f;
+         
+        }
+        .footer-wrapper ul {
+          list-style: none;
+        }
+        #copyleft {
+          padding-top: 40px;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md bg-light navbar-light">
+        <div class="navbar-brand">GLUG PESCE, Mandya</div>
+        <button
+          class="navbar-toggler button-outline-light"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="../index.html">Home</a>
+            <a class="nav-item nav-link" href="../event.html">Events</a>
+            <a class="nav-item nav-link" href="../blogs.html">Blog</a>
+            <a class="nav-item nav-link" href="../localisation.html">Localisation</a>
+            <a class="nav-item nav-link" href="../gallery.html">Gallery</a>
+            <a class="nav-item nav-link" href="../teamm.html">Team</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  
+    <div class="container t">
+      <h1>Getting started with Pelican</h1>
+      <h5>Published on May 9, 2020 by zphoenix</h5> <hr>
+      <strong>TL;DR</strong>:
+
+      <a href="https://blog.getpelican.com/">Pelican</a> is a static site
+      generator written mainly in Python and why we call it static is because it
+      doesnt require any database and its very simple.<br />
+      Pelican takes the content in mostly as text or markdown format, push it to
+      a template and outputs as a HTML and CSS page, sometime even JS if added
+      in the template. Pelican is simple and lightweight unlike other websites
+      build in HTML or CSS or PHP which have a complex structure. <br>
+      <h3>Prerequisites</h3>
+      <ul>
+        <li><a href="https://www.python.org/">Python</a></li>
+        <li><a href="https://pypi.org/project/pip/">Pip</a></li>
+        <li>
+          <a href="https://git-scm.com/">Git</a> -<a
+            href="https://gitlab.com/users/sign_in#register-pane"
+            >Gitlab Account</a
+          >
+        </li>
+      </ul>
+      <h3>Contents</h3>
+      <ol>
+        <li>Installations</li>
+
+        <li>Configuration</li>
+
+        <li>Create a repo/project in gitlab</li>
+
+        <li>Initial setup to get Pelican</li>
+
+        <li>Write the first blog</li>
+
+        <li>The OUTPUT</li>
+
+        <li>Thinking to host Pelican?</li>
+
+        <li>THEMENATION - Adding a theme</li>
+
+        <li>Futuristic</li>
+
+        <li>Conclusion</li>
+      </ol>
+      <h3>1. Installations</h3> <hr>
+      <ul>
+        <li><h4>
+          Install Python</h4> 
+          <pre><code>sudo apt-get install python3.6
+  or
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.6</code></pre>
+       
+        
+<li><h4>Install PIP</h4>
+<pre><code>sudo apt install python3-pip
+sudo apt install build-essential python3-dev
+</code></pre>
+</li>
+<li><h4>Install Git </h4>
+
+<pre><code>sudo apt install git
+#if any error persists try
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git</code></pre>
+</li>
+
+<pre><code>Install Virtualenv
+sudo apt install virtualenv
+virtualenv pelican
+</code></pre>
+        </li>
+      </ul>
+
+      <h3>2. Configuration</h3> <hr>
+      <ul>
+        <li><h4>
+          Configure Virtualenv </h4>
+          It creates an environment and its suggested to overcome conflits when
+          multiple projects in a machine and libraries issues. <br /> <br>
+
+<pre><code>virtualenv pelican
+cd pelican
+source bin/activate
+</code></pre>
+
+          Output<br />
+          <pre><code>(pelican) z@zphoenix:~/pelican$
+          </code></pre>
+  
+        </li>
+      </ul>
+
+      <h3>3. Create a repo/project in gitlab</h3> <hr>
+      <ul>
+        <li><h4>
+          a.Sign Up </h4> Register here
+          <a href="https://gitlab.com/users/sign_up"
+            >https://gitlab.com/users/sign_up
+          </a> <br>
+          So we have two options
+          <ul><li>
+           Either get the pelican site running on <code>your_username.gitlab.io </code> or</li>
+          <li>
+          create a group and riunning on <code>your_groupname.gitlab.io</code>
+          </li></ul> 
+          
+          Here lets follow group method.<br />
+          <ul>
+              <li>
+                <strong>Create a new group</strong>
+           <br>  Firstly lets create a group & click the link
+          to create a new group : https://gitlab.com/groups/new
+          <img class="images" src="pelican1.png" alt="" /> <br /><br />
+        </ul>
+          _Note : _In the place of <code>zphoenix</code> have your <code>username</code>.
+          <img class="images" src="pelican2.png" alt="" /> <br /><br />
+
+          So we create a new project under same name
+          <code>blog-username.gitlab.io</code>
+          </li>
+      
+        </li> <br>
+        <li><h4>
+          b. Clone the project </h4>
+           Lets clone the project and start working
+          on it.
+<ul>
+
+    <li>
+Click on <code>Clone</code> & Copy the ssh key</li>
+        <li>
+          Open Terminal <code>ctrl+shift+t</code>
+          </li>
+        <li>
+          Clone the repo</li>
+          <code>git clone
+            git@gitlab.com:blog-username.gitlab.io/blog-username.gitlab.io.git</code>
+<br>
+          Output<br />
+
+<pre><code>(pelican) z@zphoenix-pc:~/pelican$ git clone
+git@gitlab.com:blog-zphoenix.gitlab.io/blog-zphoenix.gitlab.io.git
+Cloning into 'blog-zphoenix.gitlab.io'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.</code></pre>
+          
+        
+        
+    </ul>
+      </ul>
+<h3>4. Initial setup to get Pelican</h3> <hr>
+
+<ul>
+
+<li> <h4>Installation</h4>
+<code>pip install pelican</code> <br>
+<code>pip install markdown</code>
+</li>
+      
+      <li>
+
+        <h4>Get a basic site</h4>
+
+
+        <code>pelican-quickstart</code>
+  <br />
+      Output<img class="images" src="pelican4.png" alt="" />
+      <br /><br />
+      _Note_ : This command generates all required files basically basic pelican
+      structure, there will be questions poped up, makesure you give URL Prefix
+      as <strong>'blog-username.gitlab.io'</strong>
+      and leave rest as default values [ (Y/n)
+      have default value as Yes and (y/N) is vice-versa ] </li>
+      
+      
+    </ul>
+    <h3>5. Write the first
+      blog </h3> <hr>
+      <ul>
+
+        <li>
+        
+  <h4>Create a blog post</h4>
+    <code>
+      cd content<br />
+      touch firstPost.md` #To create the file<br />
+      nano firstPost.md` #To open the file<br />
+    </code>
+      
+      
+      
+<br>
+      Add these below contents
+
+<pre><code>
+Title: My First Post
+Date: 2020-05-08 18:59&lt;br&gt;
+Modified: 2020-05-09 19:30
+Category: Python &lt;br&gt;
+Tags: pelican, publishing &lt;br&gt;
+Slug: my-first-post &lt;br&gt;
+Authors: zphoenix, GLUG PESCE &lt;br&gt;
+Summary: Short version for index and feeds &lt;br&gt;
+This is the content of my super blog post.
+</code></pre>
+   
+      <br>Note : Reference - get
+      pelican https://docs.getpelican.com/en/3.6.3/content.html and Slug is
+      nothing but filename without space, makesure to give `-` instead of ` `
+      #space <br> <br> 
+      Once you are done press <code>ctrl + s</code> to save and <code>ctrl + x</code> to exit
+      from nano editor.<br /><br>
+    </li>
+<li><h4>
+       Convert post into html</h4> <code>pelican content<br />make html<br /><br /></code>
+       
+      
+
+      Try to check if public folder is created, if that has generated proceEd,
+      else cross check and try again!!!<br />
+    </li>
+
+    </ul>
+    <h3>
+      6. The OUTPUT </h3> <hr>
+      Inorder to preview the firstPost.md - The blog post
+      in your terminal type <br /> <br> <code>make serve<br /></code>
+    <br>
+      Now open http://localhost:8000 in your web browser, your very first
+      pelican based blog site is hosted locally :) <br> <br>
+      <strong>
+      Output</strong><br /><img class="images"
+        src="pelican5.png"
+        alt=""
+      />
+      <br /><br />
+<strong>
+      Hurray !!!! Congratulations here goes your Pelican BLog Post**</strong>
+      <br /><br /> 
+      Note : To preview in our localhost you can even `cd` into <code>public</code> folder
+      and type <br> <br>
+      <ul> <li>
+   
+          <code>python -m SimpleHTTPServer</code> #if using Python2 </li> <li>
+            <code> python -m
+              http.server</code>
+          #if using Python3</li><br />
+    </ul>
+
+<h3>
+
+    7. Thinking to host Pelican?</h3>  <hr>
+     Lets get three important files<br />
+      But before that we have to make three important changes, as gitlab
+      requires public directory and it helps in hosting properly. In or case its
+      <code>output</code> so we should change it from <code>output</code> to <code>public</code>.  <br>
+      <ul>
+<li>
+Open to
+      publishconf.py and pelicanconf.py file and at the end add the below
+      codes<br />
+      <code>OUTPUT_PATH = '/public'</code><br /></li>
+      <li>
+      Open to Makefile and search for <code>OUTPUTDIR=$(BASEDIR)/output</code>  in that
+      line change output to public like below <br />
+      <code>OUTPUTDIR=$(BASEDIR)/public</code>
+      </li><br />
+
+    
+      Now back to business, so lets create requirements.txt, .gitlab-ci.yml and
+      .gitignore.<br />
+<li><h5>requirement.txt</h5>
+      
+       But before getting into it lets try do get a
+      requirements.txt file. Why is requirements.txt is important?<br />
+      We all may run different python environments and with different versions
+      and we primarily generate and share requirements.txt file to make it
+      easier for other developers to install the correct versions of the
+      required Python libraries/Packages to run the Python code that we have
+      written.<br /><br>
+<code>touch requirements.txt</code>
+      <br />
+       <code>nano requirements.txt</code> <br /><br />
+      Paste the below contents in <code>requirements.txt</code> 
+      <pre><code>
+markdown
+pelican  </code></pre>
+      
+
+    </li>
+     <li><h4>.gitlab-ci.yml &lt;hr&gt;</h4>
+      <br />
+      It is a configuration file that will build and deploy or host our website
+      in Gitlab Pages.<br />
+
+      <code>
+        touch .gitlab-ci.yml<br />
+        nano .gitlab-ci.yml<br />
+      </code>
+      <br />
+      Paste these content in <code>.gitlab-ci.yml</code><br />
+  <pre><code>
+image: python:3.6-alpine
+
+pages: 
+  script: 
+  - pip install -r requirements.txt
+  - pelican -s publishconf.py
+  artifacts:
+    paths:
+      - public/
+    only:
+      - master
+  </code></pre>
+
+
+
+    <li>
+    <h4>
+
+    .gitignore &lt;hr&gt;</h4>
+      <br />
+      Lets create a .gitignore.<br /> <br>
+<code>
+  touch .gitignore<br />
+  nano .gitignore<br /><br />
+</code>
+      
+      
+      Paste these content in <code>.gitignore</code>
+
+<pre>
+<code>
+ /public
+ *.pyc  
+</code>
+</pre>
+
+
+    </li>
+<li><h4>
+      Lets PUSH !!!</h4><br />
+      Now lets push the pelican source code. <br>
+      <pre><code>
+        git add .
+        git commit -m "First Commit to add Pelican Blog Site" 
+        git push
+      </code></pre>  
+</li>
+      <br />
+<li><h4>
+CI/CD Configuration</h4>
+
+      So go to CI/CD - > pipeline -> jobs<br />
+      If the status of your job is <code>passed</code> then your Pelican based Blog Site
+      you will find it at <code>blog-username.gitlab.io</code><br /><br />
+      <img class="images" src="pelican6.png" alt="">
+      <br /><br />
+      So your dream come true your very own Blog site LIVE !!! - Check out it
+      here - blog-zphoenix.gitlab.io
+      <br />
+    </li>
+    </ul>
+<h3>
+
+      8. THEMENATION 
+      - Adding a Theme </h3>
+<hr>
+      <ul>
+
+        <li><h4>Get the Theme and Plugin</h4>
+        <br>
+      
+       So
+      there is huge collection of
+      <a href="https://github.com/getpelican/pelican-themes">Pelican Themes</a>
+      , amongst it i liked
+      <a
+        href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3"
+        >pelican-bootstrap3</a
+      >
+ <br>
+ <code>
+  cd .. <br>
+pwd <br>
+/home/z/pelican <br>
+ </code>
+      #Clone Theme<br />
+      <code>git clone</code>
+        <a href="https://github.com/getpelican/pelican-themes.git"
+          ><code>https://github.com/getpelican/pelican-themes.git</code></a
+        >
+      <br /><br />
+      Now cd into pelican-themes, copy `pelican-bootstrap3` into
+      <code>blog-username.gitlab.io</code>  directory<br />
+
+      #Clone Pelican Plugin<br /> <code>git clone</code>
+      
+      <a href="https://github.com/getpelican/pelican-plugins.git"
+        ><code>https://github.com/getpelican/pelican-plugins.git</code> </a
+      >
+      <br /><br /> 
+      Now cd into pelican-plugins,search and copy <code>i18n_subsites</code> into a new
+      subdirectory called `plugins` in <code>blog-username.gitlab.io</code> directory<br /><br />
+    </li>
+
+
+      <li> <h4>Configuration</h4> Now edit peliconconfig.py file <br>
+
+
+
+
+        <pre><code>
+          # THEME CONFIG
+          THEME = 'pelican-bootstrap3'
+          JINJA_ENVIRONMENT = {'extensions':['jinja2.ext.i18n']}
+          PLUGIN_PATHS = ['plugins'] 
+          PLUGINS =['i18n_subsites'] 
+          BANNER = 'assets/banner.jpg'
+          BANNER_SUBTITLE = "Your banner message here."
+          STATIC_PATHS = ['assets']
+        </code></pre>
+          <br>
+       <br>
+
+  
+      <li><h4>The file structure [ A cross verification ]</h4>
+      The filestructure is very simple
+      <br>
+      <img src="pelican.jpg" alt="">
+    </li>
+
+    <li>
+     <h4>Lets deploy</h4> cd blog-username.gitlab.io<br />
+     <code>
+      pelican content<br />
+      make html<br />
+      make serve
+
+     </code>
+<br /><br />
+
+      <strong>OUTPUT</strong><br />
+      <img class="images" src="pelican7.png" alt="">
+      <br /><br />
+
+      <br />
+    </li>
+</ul>
+    <h3>9. Futuristic   </h3><hr>
+
+    <ul>
+        <li>
+  
+    Add more post - Start writing blogs buddies</li><li>Get
+      a new theme for your site Try a different one, try to experiment with
+      themes :)<li> - Add few javascript tricks and let me know, im still learning
+      JS !</li>
+    </ul>
+      <br /> 
+<h3>10. Conclusion</h3><hr>
+     Having said this blog is just a kickstart and its
+      only your try will fetch you a great work out of you. Pelican is python
+      based and its so easy to work and deploy too. And ifou are looking for a
+      <a href="https://gitlab.com/blog-zphoenix/blog-zphoenix.gitlab.io"
+        >https://gitlab.com/blog-zphoenix/blog-zphoenix.gitlab.io</a
+      >. <br><br>
+
+       In the virtue of getting writing this blog here is the OUTPUT :
+      <a href="https://blog-zphoenix.gitlab.io/"
+        >https://blog-zphoenix.gitlab.io/</a
+      >
+      <br />
+<br>
+      If any errors do ping me or if you had a better pelican hosted share it
+      with me, there will be something that i can learn from yours. 
+      <br> <ul>
+          <li>
+    Telegram :
+      @blackzphoenix </li>
+    <li> 
+     
+      Email ID : zphoenix@disroot.org </li>
+      <li>
+      Mastodon :
+      zphoenix@fsmi.social </li>
+    </ul>
+
+    <strong>
+      Reference </strong> <br>
+<ul> <li>
+      <a
+        href="https://glugpesce.github.io/event/2019/10/31/introduction-to-git.html"
+        >Git and Git Configuration</a
+      ></li>
+    <li>
+      <a href="https://docs.getpelican.com/en/stable/">Pelican Documentation</a></li>
+    <li>
+      Pelican examples on Gitlab :
+      <ul><li>
+      <a href="https://gitlab.com/pages/pelican">Gitlab on Pelican</a>
+    </li><li>
+      <a href="https://voidspacexyz.gitlab.io/pages/">VoidSpaceXYZ's example</a>
+
+      hosted]()</li></li>
+    </ul>
+    </ul>
+    </div>
+    <br><br>
+    <footer class="footer">
+      <div class="footer-wrapper text-left">
+                <div class="container">
+                    <div class="row">
+                            <div class="col-sm">
+                              <ul>
+                            <li><span>&nbsp;&nbsp;&nbsp;Stay tuned for more info on <a href="https://mastodon.social/@glugpesce" target="_blank">mastodon</a> </li>
+    <br>
+                            <li><span class="spanned">&nbsp;&nbsp;&nbsp;Follow Us</span></li>
+                          <br>
+                          <li><a style="text-decoration: none;" href="https://mobile.twitter.com/GlugPesce?s=09" target="_blank">&nbsp;&nbsp;&nbsp;<i class="fa fa-twitter fa-2x"></i>&nbsp;&nbsp;&nbsp;</a>
+                            <a style="text-decoration:none;" href="https://www.facebook.com/glug.pesce.3" target="_blank"><i class="fa fa-facebook fa-2x"></i> &nbsp;&nbsp;&nbsp;</a>
+                           <a style="text-decoration: none;" href="https://instagram.com/glugpesce?igshid=dqku04i0gpli" target="_blank"><i class="fa fa-instagram fa-2x"></i> &nbsp;</a></li>
+                          </ul><br> <br>
+                            </div>
+    
+                            <div class="col-sm"><ul>
+                            <li><span id="imp-links">&nbsp;&nbsp;&nbsp;Important links</span></li>
+                            
+                            <li><a class="nav-link" href="http://www.pescemandya.org/">P.E.S.C.E,Mandya</a></li>
+                            
+                            <li><a class="nav-link" href="http://discuss.fsmk.org">FSMK Discuss</a></li>
+                            <li><a class="nav-link" href="http://fsmk.org">Free Software Movement Karnataka</a></li>
+                            <li><a class="nav-link" href="http://fsmi.in">Free Software Movement India</a></li>
+                          <li><a class="nav-link" href="http://fsf.org">Free Software Foundation</a></li>
+                            </ul> <br> <br>
+                          </div>
+    
+    
+                            <div class="col-sm">
+                              <ul>
+                                <li><span id="imp-links">&nbsp;&nbsp;&nbsp;GLUG-PESCE</span></li>
+                                <li><a class="nav-link" href="../index.html">Home</a></li>
+                              </li><a class="nav-link" href="../event.html">Events</a></li>
+                            </li><a class="nav-link" href="../blogs.html">Blogs</a></li>
+                            </li><a class="nav-link" href="../localisation.html">Localisation</a></li>
+                        </li><a class="nav-link" href="../gallery.html">Gallery</a></li>
+                    </li><a class="nav-link" href="../teamm.html">Team</a></li>
+                              </ul>
+                            </div>
+                    </div>    
+            </div>
+    
+            <div id="copyleft">CopyLeft. All Wrongs Reserved ! <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+                This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></div>
+            </div>
+          </footer>
+            <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+          ></script>
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+          ></script>
+          <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+          ></script>
+    
+  </body>
+</html>

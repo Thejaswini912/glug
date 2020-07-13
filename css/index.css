@@ -1,0 +1,50 @@
+html,
+body,
+main {
+  background-color: #173f5f;
+}
+p {
+  color: white;
+}
+/* .backimg {
+  color: white;
+  /* margin: 5vh; */
+
+/*background-image: url(assets/images/glug-logo.png);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: auto;
+} */
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+#imp-links {
+  font-size: 1.2em;
+  color: #3caea3;
+}
+
+.footer-wrapper {
+  padding-top: 10px;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  color: #173f5f;
+}
+.footer-wrapper ul {
+  list-style: none;
+}
+#copyleft {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  /* padding-bottom: 70px; */
+  text-align: center;
+}

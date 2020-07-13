@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="blogs.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body,
+      html {
+        background-color: #173f5f;
+        color: white;
+      }
+      h1,h2
+      {
+        color: #3caea3;
+      }
+
+      h3,h5{
+        color:#f6d55c;
+      }
+      article,p,.t {
+        font-size: 1.2em;
+      }
+      #imp-links {
+  font-size: 1.2em;
+  color: #3caea3;
+}
+        .footer-wrapper {
+  padding-top:20px;
+          bottom: 0px;
+          left: 0;
+          width: 100%;
+          height: auto;
+          background-color: white;
+          color: #173f5f;
+         
+        }
+        .footer-wrapper ul {
+          list-style: none;
+        }
+        #copyleft {
+          padding-top: 40px;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+pre{
+  color:white;
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="navbar-brand">GLUG PESCE, Mandya</div>
+        <button
+          class="navbar-toggler button-outline-light"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="../index.html">Home</a>
+            <a class="nav-item nav-link" href="../event.html">Events</a>
+            <a class="nav-item nav-link" href="../blogs.html">Blog</a>
+            <a class="nav-item nav-link" href="../localisation.html">Localisation</a>
+            <a class="nav-item nav-link" href="../gallery.html">Gallery</a>
+            <a class="nav-item nav-link" href="../teamm.html">Team</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container t">
+    <h1>Shell Scripting 0.0</h1>
+    <h5>Published on Mar 23, 2019 by zphoenix</h5> <hr>
+    <h3>SHELL SCRIPTING 0.0</h3>
+    <i
+      >Shell Scripting is a series of command/s stored in a plain text file and
+      execute the text file instead of typing each command it is Shell
+      Script.</i
+    ><br><br>
+    <p>
+      <strong>Shell scripts</strong> can take input from a user or file and
+      output them to the screen. Whenever one do the
+      <strong>same task over and over again</strong>, using of shell script
+      automates the repetitive task. Shell acts as a interface between Kernel
+      and User.
+    </p>
+    <img style="width:100%;"
+      src="https://cdn-images-1.medium.com/max/800/1*A3RH0jSbqvaFYyD1AtPdtA.jpeg"
+      alt="" 
+    /><br>
+    <caption>
+      Shell Scripting [courtesy: Internet]
+    </caption>  <br> <br>
+    <h3><strong>A script consists of</strong></h3>
+<pre><code>
+  Shell Keyword - if..else, do..while.
+  Shell commands- cd, pwd, man, echo etc..
+  Linux binary commands - w, who, free etc..
+  Text processing utilities - grep, awk, cut.
+  Functions - frequently used commands together via functions.
+  For example,
+    /etc/init.d/functions is a file which contains functions which are used by
+    most system shell scripts in the directory. In simpler terms printf which is
+    part of pre defined function. Control flow- are statements which contains
+    if..then..else or shell loops to perform repeated actions.
+</code></pre>
+
+
+    <br> <br>
+    <h3><strong>Table of Contents :</strong></h3>
+    <ol>
+      <li>Introduction to Shell Scripting</li>
+      <li>Variables and Environment</li>
+      <li>Decision Making</li>
+      <li>Loops (Bash Loops)</li>
+      <li>Pipes and Traps</li>
+      <li>Functions</li>
+      <li>Extra concepts</li>
+    </ol>
+
+    <h2>I. Introduction to Shell Scripting</h2>
+    <h3><strong>1.Linux Shell </strong></h3>
+    <p>
+      A Computer understand the language of 0’s and 1’s called
+      <strong>binary language</strong>
+      ,it is difficult for all of us, to read and write in binary language.
+      Wherein OS have a program called
+      <strong>Shell or command line interpreter</strong> which accepts your
+      instruction or commands written in high level language and translate it
+      into computers binary language. <br>
+      <br />
+      There are many types of shell like
+      <strong>BASH, CSH, KSH, etc.</strong>Among them, BASH is very famous and
+      it was developed by GNU. <strong>Bourne -Again SHell(BASH)</strong> is the
+      default GNU/Linux shell and it does run on every version of Unix, ms-dos,
+      and Windows platforms.
+      <br />
+      <strong>KSH</strong> - AT&T version of the Korn shell. <br /><strong
+        >CSH</strong
+      >
+      - C like syntax. <br />
+      <br />
+      Bash understands the below commands :
+      <br />
+<pre><code>
+  such as if, else, for, while etc..
+  (user defined functions such as genpasswd)
+  such as cd, ls, pwd etc..
+  such as /home/text or /bin/desktop/programs
+</code></pre>
+
+
+
+    </p>
+    <br />
+    <h3><strong>2. Shell Script</strong></h3>
+    <p>
+      Let’s use <strong>Nano</strong> in our case and to begin with script lets
+      start with
+      <strong> Hello World!.</strong>
+      <br />
+<pre><code>
+  nano hello.sh (editor opens and sh is the format) <br>
+  #!/bin/bash
+  echo "Hello, World!" (echo works the same as print)
+  echo "Welcome to the Shell Scripting Tutorial !!." <br>
+  bash hello.sh (changes the execution permission) <br>
+  Hello, World! 
+  Welcome to the Shell Scripting Tutorial !!.
+</code></pre>
+
+      Our script started with <strong>#! (shabang),</strong> it is the
+      interpreter for execution in <strong>GNU/Linux or UNIX OS.</strong>Most of
+      the shell script starts with
+      <strong>#!/bin/bash.</strong>
+      <br />
+      And after shabang the path indicates the path Bash installed in OS and in
+      GNU/Linux its under
+      <strong>bin.</strong>
+    </p>
+    <br />
+    <h3><strong>3. Commenting </strong></h3>
+    <p>
+      Commenting can be done using # before line and for multiple line comment
+      use
+      <strong>«COMMENT keyword:</strong>
+     
+<pre><code>
+  #!/bin/bash
+  #This is an Example of Single line Comment!
+  echo "Welcome !!" <br>
+  #!/bin/bash
+  echo "Welcome!!"
+  &lt;&lt;COMMENT
+  Multiple line Comment : Usage
+  Commenting two or more lines of a script
+  Can be used to explain the written code
+  COMMENT
+  echo "End!!"
+</code></pre>
+    </p>
+    <h2>II.VARIABLES & ENVIRONMENTS</h2>
+    <strong>Variables</strong> are used to store data and configuration options.
+    There are two types of variable
+    <br />
+    1. System Variables. <br />
+    2. User defined Variables. <br />
+    <br>
+    <h3><strong>1. System Variables</strong></h3>
+    <p>
+      The variables are created and maintained by
+      <strong>Bash Shell</strong> and it is is defined in
+      <strong>CAPITAL LETTERS</strong> only. Aspects of shell can be configured
+      by modifying system variables such as PATH, LANG, DISPLAY , HOSTNAME etc..
+   
+<pre><code>
+
+  ╔══════════════╦═════════════════════════════════════════════════╦═════════════════════════╗
+  ║ System       ║                    Meaning                      ║ Variable Value Type     ║  
+  ║ Variable     ║                                                 ║                         ║ 
+  ║ Variable     ║                                                 ║                         ║ 
+  ╠══════════════╬═════════════════════════════════════════════════╬═════════════════════════╣
+  ║ BASH_VERSION ║ Holds the version of this instance of bash.     ║ echo $BASH_VERSION      ║
+  ║ HOSTNAME     ║ The name of the your computer.                  ║ echo $HOSTNAME          ║
+  ║ HOME         ║ The home directory of the current u             ║ echo $HOSTNAME          ║
+  ║ HISTSIZE     ║ The number of commands to remember in the       ║ echo $HISTSIZE          ║
+  ║              ║ command history.Default value is 500.           ║                         ║
+  ║ HISTFILESIZE ║ The maximum lines contained in the history file.║ echo $HISTFILESIZE      ║
+  ║ HISTFILE     ║ The file in which command history is saved.     ║ echo $HISTFILE          ║
+  ║ CDPATH       ║ The search path for the cd command.             ║ echo $CDPATH            ║
+  ║ IFS          ║ IFS is used for word splitting after expansion  ║ echo $IFS               ║
+  ║ LANG         ║ Determine the locale category                   ║ echo $LANG              ║
+  ║ PATH         ║ list of directories where shell search commands.║ echo $PATH              ║
+  ║ PS1 	       ║ Your prompt settings. 	                      	 ║ echo $PS1               ║
+  ║ TMOUT        ║ The default timeout for the read builtin command║ echo $TMOUT             ║
+  ║              ║ The wait time for i/p after issuing the command ║                         ║
+  ║ TERM         ║ Your login terminal type.                       ║ echo $TERM              ║
+  ║              ║                                                 ║ export TERM=vt100       ║
+  ║ SHELL        ║ Set path to login shell.                        ║ echo $SHELL             ║
+  ║ DISPLAY      ║ Set X display name                              ║ echo $DISPLAY           ║
+  ║              ║                                                 ║ export DISPLAY=:0.1     ║
+  ║ EDITOR       ║ Set name of default text editor.                ║export EDITOR=/usr/bin/vi║
+  ╚══════════════╩═════════════════════════════════════════════════╩═════════════════════════╝
+
+
+
+</code></pre>
+
+
+
+
+      When it comes to
+      display the value of any given variable, 
+  
+
+<pre><code>
+  #!/bin/bash
+  VARIABLE=1029
+  printf "$VARIABLE\n"
+  printf "String %s\n" $VARIABLE
+  printf "Signed Decimal Number %d\n" $VARIABLE
+  printf "Floating Point Number %f\n" $VARIABLE
+</code></pre>
+
+    </p>
+    <h3><strong>2. User Defined Variables</strong></h3>
+    <p>
+      This type of variables are created and maintained by user. Variable
+      defined here may use any valid variable name, but it is good practice to
+      avoid all uppercase names as many are used by the shell.
+    </p>
+    <br />
+    <h2>III. DECISION MAKING</h2>
+    <i>So far all the scripts we have followed is </i>
+    <strong>*sequential flow</strong>
+    (line by line), is it possible to execute a command based on condition if it
+    exist?*
+    <br />
+    <br />
+
+    <strong>If</strong> command is used for selective execution of certain
+    commands of a script. A warning message can pop up and run a script more
+    interactively using if command to execute the script based on any given
+    condition. A condition is an expression that evaluates to a boolean value
+    (0/1). A condition is used in
+    <strong>shell script loops and if statements.</strong>
+<pre><code>
+  echo $(( 7 + 4))    #Output : 11
+  echo $(( 5 < 2 ))   #Output : 0, Is 5 is less than 2? No
+  echo $(( 5 > 12 ))  #Output: 0, Is 5 greater than 12? No
+  echo $(( 5 == 10 )) #Output: 0, Is 5 equal to 10? No
+  echo $(( 5 != 2 ))  #Output: 1, Is 5 is not equal to 2? Yes
+  echo $(( 1 < 2 ))   #Output: 1, Is 1 less than 2? Yes
+  echo $(( 5 == 5 ))  #Output: 1, Is 5 equal to 5? Yes
+</code></pre>
+    <h3><strong>1. Test Command</strong></h3>
+    <p>The <strong>test command</strong> is used to check
+    <strong>file types and compare given values</strong> Test is used in Decision Making statements too. It is used mainly for,
+    <br>
+    a.
+File attributes comparisons<br>
+b.  Perform string comparisons<br>
+c. Basic
+arithmetic comparisons.
+<br><br>
+<strong>Note :</strong> Try <strong>man test</strong> command on terminal for complete list of conditions
+which are used for test command. 
+<pre><code>
+  test &lt;condition&gt;
+  OR
+  test &lt;condition&gt; && &lt;true-command&gt;
+  OR
+  test &lt;condition&gt; || &lt;false-command&gt;
+  OR
+  test &lt;condition&gt; && &lt;true-command&gt; || &lt;false-command&gt; <br>
+  test 5 -gt 2 && echo "Yes"
+  test 1 -lt 2 && echo "Yes"
+  test 5 -eq 9 || echo "No"
+  test 5 -gt 2 && echo "Yes" || echo "No"
+  test 5 -ne 10 && echo Yes || echo No <br>
+  Yes
+  Yes
+  No
+  Yes
+  Yes
+</code></pre>
+
+<h3><strong>2. If Command Statements</strong></h3>
+
+a. if then<br> b. if else fi<br> c. Nested ifs<br> d. Multilevel if then else
+<br> <br>
+
+<strong>a. if then</strong> <br>
+
+<div class="row">
+<div class="col-sm">
+  <pre>
+    <code>
+if condition 
+then
+&nbsp; command1
+&nbsp; command2
+&nbsp; ....
+&nbsp; commandN
+fi</code></pre></div>
+<div class="col-sm">
+  <pre>
+    <code>
+if test var == value 
+then
+&nbsp; command1
+&nbsp; command2
+&nbsp; ....
+&nbsp; commandN
+fi</code></pre></div>
+<div class="col-sm">  <pre>
+  <code>
+if test -f /file/exists
+then
+&nbsp; command1 
+&nbsp; command2 
+&nbsp; .... 
+&nbsp; commandN 
+fi</code></pre>
+</div>
+</div> <br>
+In a <strong>if then </strong> command, condition is checked and if its true then commands
+are executed, in false condition it exits. For Example, 
+<pre><code>
+  #!/bin/bash
+  read -p "Enter a Password : " pass
+  if test "$pass" == "gnu"
+  then
+  &nbsp; echo "Password verified."
+  fi
+</code></pre>
+
+<strong>b. if else fi</strong><br>
+<div class="row">
+  <div class="col-sm">
+    <pre><code>
+if condition 
+then 
+&nbsp; command1 
+&nbsp; command2 
+&nbsp; .... 
+&nbsp; commandN 
+else 
+&nbsp; command1 
+&nbsp; command2 
+&nbsp; .... 
+&nbsp; commandN 
+fi</code></pre></div>
+<div class="col-sm">
+  <pre><code>
+if test var -eq val
+then 
+&nbsp; command1 
+&nbsp; command2 
+&nbsp; .... 
+&nbsp; commandN 
+else 
+&nbsp; command1 
+&nbsp; command2 
+&nbsp; .... 
+&nbsp; commandN
+fi 
+</code></pre>
+</div>
+</div>
+In  a <strong>If else fi</strong>  command, condition is checked and if its true then commands
+are executed, in false condition it else commands are executed. For Example, <br>
+<br><pre><code>
+#!/bin/bash 
+read -p "Enter a number : " num 
+if test $num -ge 0 
+then 
+&nbsp; echo "$num is Positive number." 
+else 
+echo "$num number is Negative number." 
+fi</code></pre> <br> <br>
+<strong>c. Nested If</strong> <br>
+In a <strong>Nested I</strong> command, condition is checked and if its true
+then commands are executed interestingly we have another if condition as the
+then commands, so again we need to complete the inner if condition and once
+exited, we have false condition for the outer if command and else commands are
+executed. <pre><code>
+if condition 
+then 
+  if condition 
+  then 
+    command1 
+    .... 
+    ... 
+    commandN
+else 
+    command1 
+    .... 
+    ... 
+    commandN
+fi 
+else 
+  command1 
+  .... 
+  ... 
+  commandN
+fi
+</code></pre> <br><br>
+<strong>d. Multilevel if then else</strong>In a <strong>Multilevel  If then else</strong>
+command,
+condition is checked and if its true then commands are executed, in false
+condition it moves to <strong>elif</strong> then <strong>condition1</strong>
+is executed till we complete <strong>conditionN</strong>
+and then else commands of the condition are executed.
+<pre><code>
+if condition 
+then 
+    condition is true
+    execute all commands up to elif statement
+elif condition1 
+then 
+    condition1 is true
+    execute all commands up to elif statement
+elif condition2 
+then 
+    condition2 is true 
+    execute all commands up to elif statement 
+elif conditionN 
+then 
+    conditionN is true 
+    execute all commands up to else statement 
+else 
+    None of the above conditions are true 
+    execute all commands up to fi 
+fi 
+</code></pre> <br><br>
+<strong>3. Exit Status</strong> <br> <br>
+Each Linux command executed have an exit status, it is nothing but an 
+<strong>integer
+  number .Zero(0)</strong>as a  exit status means the command was successful in
+  execution without any errors. And a <strong>non-zero (1–255)</strong>as a exit status means
+  command was a failure.<br> Special shell variable <strong>$?</strong> can be used to get the
+  exit status of the previously executed command and use echo command to print th
+  exit status value.<br> 
+  <strong>For Example
+  </strong>
+<i>lets search username is found or not</i>
+
+<div>
+<pre><code>
+  #!/bin/bash
+  FILE=/etc/passwd
+  read -p "Enter a user name : " username 
+  #locate the username in the file passwd 
+  if grep "^$username:" /etc/passwd >/dev/null 
+  then 
+  echo "User '$username' found in $FILE file." 
+  else
+  echo "User '$username' not found in $FILE file."
+  fi </code></pre>
+</div>
+<strong>4. Boolean Operators</strong> <br> <br>
+a. Logical AND - &&<br>
+b. Logical OR - ||<br>
+c. Logical Not - ! <br> <br>
+<strong>a. Logical AND - &&</strong>It executes commands based on the <strong>exit status</strong>
+of
+another command where it runs second command only if <strong>first is successful</strong>
+<div>
+  command1 && command2 <br> <br>
+  <pre><code>grep "^glugpesce" /etc/passwd && echo "Found in /etc/passwd"</code></pre>
+ 
+</div>
+<strong>b. Logical OR -  &&</strong> It executes commands based on the <strong>exit status</strong>
+of
+another command where it runs second command only if <strong>first is not
+  successful</strong>
+
+    <pre>command1 || command2 <br> <br>
+      Checks whether we are root or not
+      test $(id -u) -eq 0  && echo "You are root" || echo "You are NOT root"<code>
+    </code></pre>
+
+
+  <strong>c. Logical Not - !</strong> It checks whether the command is <strong>true or false (0/1).</strong>
+<div class="row">
+  
+ <div class="col-sm"><pre><code>
+! expression
+</code></pre> </div>
+ <div class="col-sm"><pre><code>
+[ ! expression ]
+</code></pre> </div>
+
+ <div class="col-sm"><pre><code>
+if test ! condition
+    then
+    command1 
+    .... 
+    commandN
+fi</code></pre>
+</div>
+<div class="col-sm"><pre><code>
+if [ ! condition ]
+    then
+    command1 
+    .... 
+    commandN 
+fi</code></pre>
+</div>
+</div>
+<strong>For Example</strong>: In the below case it executes if second command when first
+command is false i.e., it creates a new folder/ directory called shell (command:
+mkdir) if there is no folder or directory present in the machine.<br> Same is in
+the case of prog1.sh. 
+<div>
+  <pre><code>
+#!/bin/bash 
+[ ! -d shell ] && mkdir shell 
+[ ! -f prog1.sh ] && touch prog1.sh</code></pre> 
+</div> <br>
+<strong>5. Numerical Comparison</strong>
+<br> <br> </strong>
+It can be done <strong>test command</strong>, the previous examples of program used these
+<strong>test command</strong>. The Numerical Comparisons commonly used are eq, ge, gt, lt,
+le, etc…
+<pre><code>
+#Numerical Comparison 
+eq 	INTEGER1 -eq INTEGER2 	INTEGER1 is equal to INTEGER2 
+ge 	INTEGER1 -ge INTEGER2 	INTEGER1 is greater than or equal to INTEGER2 
+gt 	INTEGER1 -gt INTEGER2 	INTEGER1 is greater than INTEGER2 
+le 	INTEGER1 -le INTEGER2 	INTEGER1 is less than or equal to INTEGER2 
+lt 	INTEGER1 -lt INTEGER2 	INTEGER1 is less than INTEGER2 
+ne 	INTEGER1 -ne INTEGER2 	INTEGER1 is not equal to INTEGER2 
+</code></pre>
+<strong>
+  6. String Comparisons
+</strong>It can also be done using <strong>test command.</strong> <br>
+<code><pre>
+STRING1 = STRING2
+
+STRING1 != STRING2
+
+-z STRING
+</code></pre>
+The three condition can be checked in a shell script. For Example : 
+<pre>
+<code>
+#!/bin/bash
+read -s -p "Enter your password :  " password: "pass 
+echo 
+#checks whether the string is non zero 
+if test -z $pass 
+then 
+    echo "No password was entered!!! Cannot verify an empty password!!!" 
+    exit 1 
+elif test "$pass" != "gnu" 
+then 
+    echo "Wrong Password !!" 
+else 
+    echo "Authentication of password Success!" 
+fi </code></pre>
+<strong>
+  <br> <br> 7. File attributes comparisons</strong> <br><br>
+<strong>File attributes</strong> can be used making use of <strong>test commands or conditional
+  execution or decision making statements</strong>.Commonly used among them are -f, -d,
+  -a, -c, etc… 
+  <pre><code>
+  #File Attributes Comparison are 
+
+  -a file : True if file exists. 
+  -b file : True if file exists and is a block special file. 
+  -c file : True if file exists and is a character special file. 
+  -d dir  : True if file exists and is a directory. 
+  -e file : True if file exists. 
+  -f file : True if file exists and is a regular file. 
+  -g file : True if file exists and is set-group-id. 
+  -h file : True if file exists and is a symbolic link 
+  -k file : True if file exists and its ‘‘sticky’’ bit is set 
+  -p file : True if file exists and is a named pipe (FIFO). 
+  -r file : True if file exists and is readable. 
+  -s file : True if file exists and has a size greater than zero. 
+  -t fd   : True if file descriptor fd is open and refers to a terminal. 
+  -u file : True if file exists and its set-user-id bit is set. 
+  -w file : True if file exists and is writable. 
+  -x file : True if file exists and is executable. 
+  -O file : True if file exists and is owned by the effective user id. 
+  -G file : True if file exists and is owned by the effective group id.
+  -L file : True if file exists and is a symbolic link. 
+  -S file : True if file exists and is a socket. 
+  -N file : True if file exists and has been modified since it was last read. 
+</code></pre>
+  <strong>8. Command line argument</strong> <br><br>
+  A *<strong>command line argument*</strong> is nothing but an argument sent to a program being
+called. <br>
+<pre><code>
+cd shell 
+shell: No such file or directory. 
+</code></pre>
+Command line Arguments are listed below <br>
+<pre><code>
+&nbsp;$* : holds all command line parameters or arguments. 
+&nbsp;$# : holds the number of positional parameters. 
+&nbsp;$- : holds flags supplied to the shell. 
+&nbsp;$? : holds the return value set by the previously executed command.
+&nbsp;$$ : holds the process number of the shell (current shell). 
+&nbsp;$! : hold the process number of the last background command. 
+&nbsp;$@ : holds all command line parameters or arguments.</code></pre>
+In a command line argument special shell variable are used and they are <br> $1,
+$2, $3, $4, $5, …,$9.<br> Few shell variables such as <br> a. $@<br> b. $*
+<br> <br>
+**$@** are expanded as **“$1” “$2” “$3” … “$n”.**<br> 
+**$*** are expanded as **“$1y$2y$3y…$n”,** where y is the value of **$IFS** which acts as an **separator.**
+<br><br>
+
+<strong>Program</strong> <br>
+</code></pre>
+ #!/bin/bash 
+ IFS="- " 
+ echo "The script name : $0" 
+ echo "The first argument to the script : $1" 
+ echo "The second argument to the script : $2" 
+ echo "The third argument to the script : $3" 
+ echo "The fourth argument to the script : $4" 
+ echo "The number of arguments passed to the script : $#" 
+ echo "* Display all free Softwares names usinng (\$@ version) : $@" 
+ echo 
+ echo "* Display all Free Softwares names using (\$* version) : $*" 
+</code></pre>
+ <strong>Execute</strong> <br> <br>
+ bash cal_shell.sh VLC GIMP Firefox Inkspace <br><br>
+
+ <strong>Output</strong> <br>
+<code><pre>
+The script name : cal1.sh 
+The first argument to the script : VLC 
+The second argument to the script : GIMP 
+The third argument to the script : Firefox 
+The fourth argument to the script : Inkspace 
+The number of arguments passed to the script : 4 
+* Display all free Softwares names usinng ($@ version) : VLC GIMP Firefox Inkspace 
+
+* Display all Free Softwares names using ($* version) : VLC-GIMP-Firefox-Inkspace 
+</code></pre>
+<strong>Exit Command</strong>In order to exit the  <strong>BASH shell</strong> we can use 
+<strong>exit</strong> command in
+out script.<br> *Try to use  <strong>exit 0</strong>at the end of previous program and echo
+it using  <strong>echo $?</strong> and check the  <strong>exit status?</strong>
+<br><br>
+<strong>9. The Case statement</strong> <br> <br>
+The <strong>case statement</strong>  is easier to use than multilevel if then else, matching
+several values against one variable is a lot easier in the case statement. It is
+easier to read and write.
+<div class="row">
+<div class="col-sm">
+  <pre><code>
+case  $variable-name in 
+    pattern1)
+      command1 
+      .... 
+      commandN 
+      ;;
+  pattern2) 
+      command1 
+      .... 
+      commandN 
+      ;;
+  patternN) 
+      command1
+      .... 
+      commandN 
+      ;;
+  *) 
+esac 
+</code></pre>
+</div>
+<div class="col-sm">
+<code><pre>
+
+case  $variable-name in 
+  pattern1|pattern2|pattern3)
+    pattern1) 
+      command1 
+      .... 
+      commandN 
+      ;;
+    pattern4|pattern5|pattern6) 
+      command1 
+      .... 
+      commandN 
+      ;;
+    pattern7|pattern8|patternN)
+      command1 
+      .... 
+      commandN 
+      ;;
+  *) 
+esac 
+</code></pre>
+</div>
+</div>
+<strong>The case statement</strong>allows to check conditions in a easier manner and if a
+command-line is needed when the condition evaluates to true, it can be done.
+Here the  <strong>$variable-name</strong>is compared against the conditions until a match is
+found.  <strong>)</strong> acts as default case when no match is found it is executed.
+Including <strong>;;</strong> at the end of each <strong>commandN</strong> is a must. The shell executes
+all the statements up to the two semicolons. And the <strong>esac</strong> is always required
+inorder to indicate end of case statement. <br>
+<strong>For Example</strong> <br><br>
+<strong>Program</strong> <br><br>
+<pre><code>
+#!/bin/bash 
+NOW=$(date +"%a") 
+case $NOW in 
+Mon)
+echo "Full backup", $NOW;; 
+Tue|Wed|Thu|Fri) 
+echo "Partial backup", $NOW;;
+Sat|Sun) 
+echo "No backup", $NOW;;
+*) ;; 
+esac
+</code></pre> <br><br>
+<strong>Program</strong> <br><br>
+file 1: prog.sh 
+#!/bin/bash
+var=$1
+case $var in
+    maths)
+        echo "In Engineering we have MATHS in 1st to 4th Sem..." 
+        ;;
+phy) 
+        echo "Luckily or Sadly we have we have PHYSICS only for 1st or 2nd Sem..."<br>
+        ;;
+ece|cse|ise|ae|ipe|ce|eee)
+        echo "Now its time to ask Seniors..."
+        ;;
+*)
+echo "PSECE"
+echo "Welcome to $var Department !!!"
+echo "Have a nice time !!"
+echo "	$var : Departmental Issues!!  talk to HOD"	;;
+esac <br>
+file2 : execute.sh 
+chmod +x prog.sh
+./prog.sh maths
+./prog.sh phy
+./prog.sh ec
+</code></pre> <br> <br>
+<strong>Output</strong> <br><br>
+In Engineering we have MATHS in 1st to 4th Sem... <br>
+Luckily or Sadly we have we have PHYSICS only for 1st or 2nd Sem... <br>
+PESCE 
+<pre><code>
+Welcome to ec Department !!! 
+Have a nice time !!
+ ec : Departmental Issues!!  talk to HOD
+</code></pre> <br><br>
+We will continue other topics in next blog session . Thank you <br>
+<strong>Important Linux Commands</strong>
+Using Terminal is fun and learning made easy! Forthe  <a href="">basics commands</a>
+please visit the below blog session on our website <a href="glugpesce.github.io"></a>
+
+
+</p>
+</div> <br><br>
+<footer class="footer">
+  <div class="footer-wrapper text-left">
+            <div class="container">
+                <div class="row">
+                        <div class="col-sm">
+                          <ul>
+                        <li><span>&nbsp;&nbsp;&nbsp;Stay tuned for more info on <a href="https://mastodon.social/@glugpesce" target="_blank">mastodon</a> </li>
+<br>
+                        <li><span class="spanned">&nbsp;&nbsp;&nbsp;Follow Us</span></li>
+                      <br>
+                      <li><a style="text-decoration: none;" href="https://mobile.twitter.com/GlugPesce?s=09" target="_blank">&nbsp;&nbsp;&nbsp;<i class="fa fa-twitter fa-2x"></i>&nbsp;&nbsp;&nbsp;</a>
+                        <a style="text-decoration:none;" href="https://www.facebook.com/glug.pesce.3" target="_blank"><i class="fa fa-facebook fa-2x"></i> &nbsp;&nbsp;&nbsp;</a>
+                       <a style="text-decoration: none;" href="https://instagram.com/glugpesce?igshid=dqku04i0gpli" target="_blank"><i class="fa fa-instagram fa-2x"></i> &nbsp;</a></li>
+                      </ul><br> <br>
+                        </div>
+
+                        <div class="col-sm"><ul>
+                        <li><span id="imp-links">&nbsp;&nbsp;&nbsp;Important links</span></li>
+                        
+                        <li><a class="nav-link" href="http://www.pescemandya.org/">P.E.S.C.E,Mandya</a></li>
+                        
+                        <li><a class="nav-link" href="http://discuss.fsmk.org">FSMK Discuss</a></li>
+                        <li><a class="nav-link" href="http://fsmk.org">Free Software Movement Karnataka</a></li>
+                        <li><a class="nav-link" href="http://fsmi.in">Free Software Movement India</a></li>
+                      <li><a class="nav-link" href="http://fsf.org">Free Software Foundation</a></li>
+                        </ul> <br> <br>
+                      </div>
+
+
+                        <div class="col-sm">
+                          <ul>
+                            <li><span id="imp-links">&nbsp;&nbsp;&nbsp;GLUG-PESCE</span></li>
+                            <li><a class="nav-link" href="../index.html">Home</a></li>
+                          </li><a class="nav-link" href="../event.html">Events</a></li>
+                        </li><a class="nav-link" href="../blogs.html">Blogs</a></li>
+                        </li><a class="nav-link" href="../localisation.html">Localisation</a></li>
+                    </li><a class="nav-link" href="../gallery.html">Gallery</a></li>
+                </li><a class="nav-link" href="../teamm.html">Team</a></li>
+                          </ul>
+                        </div>
+                </div>    
+        </div>
+
+        <div id="copyleft">CopyLeft. All Wrongs Reserved ! <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+            This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></div>
+        </div>
+      </footer>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+      ></script>
+
+  </body>
+</html>

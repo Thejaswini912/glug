@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <style>
+        body,
+        html {
+          background-color: #173f5f;
+          color: white;
+        }
+        h1,h2
+        {
+          color: #3caea3;
+        }
+  
+        h3,h5{
+          color:#f6d55c;
+        }
+        article,p,main {
+          font-size: 1.2em;
+        }
+        .images{
+          width:100%;
+          height:auto;
+        }
+        pre{
+          color:white;
+        }
+  
+        #imp-links {
+  font-size: 1.2em;
+  color: #3caea3;
+}
+        .footer-wrapper {
+  padding-top:20px;
+          bottom: 0px;
+          left: 0;
+          width: 100%;
+          height: auto;
+          background-color: white;
+          color: #173f5f;
+         
+        }
+        .footer-wrapper ul {
+          list-style: none;
+        }
+        #copyleft {
+          padding-top: 40px;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+
+      </style>
+    </head>
+    <body>
+      <header>
+        <nav class="navbar navbar-expand-lg bg-light navbar-light">
+          <div class="navbar-brand">GLUG PESCE, Mandya</div>
+          <button
+            class="navbar-toggler button-outline-light"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="../index.html">Home</a>
+              <a class="nav-item nav-link" href="../event.html">Events</a>
+              <a class="nav-item nav-link" href="../blogs.html">Blog</a>
+              <a class="nav-item nav-link" href="../localisation.html">Localisation</a>
+              <a class="nav-item nav-link" href="../gallery.html">Gallery</a>
+              <a class="nav-item nav-link" href="../teamm.html">Team</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+<div class="container"> 
+<h1>My understanding of free software!!!</h1>
+<h5>Author: zphoenix, April 30, 2020</h5><hr>
+<main>
+<p class="size">Free Software refers to free as in freedom and that's what i too believe in !!!. A free software always should guarantee its users the essential four freedoms. The absence of at least any one of these freedoms means an application is not free software. I love the way the Free Freedoms of Free Software is expressed as - <strong>100 ( in binary 4 ) Freedoms of Free Software</strong>.</p>
+
+<pre class="size"><code> FREEDOM 0 :    `001 - USE`
+ FREEDOM 1 :    `010 - STUDY`
+ FREEDOM 2 :    `011 - SHARE`
+ FREEDOM 3 :    `100 - IMPROVE`
+</code></pre>
+
+<p class="size">But i would strongly suggest going through the official page from FSF - <a href="https://www.gnu.org/philosophy/free-sw.en.html">Four Freedoms of Free Software</a>. Everyone or most of them know what are the Four Freedoms of Free Software, but when always the big question is "<strong>How do we Implement it?</strong>". So this blog would be essentially try to justify the same.</p>
+
+<h3>Plan of Action</h3>
+
+<ol class="size">
+<li>Download searx's source code</li>
+
+<li>Try running searx in our local server i.e. localhost</li>
+
+<li>Lets make few changes in the source code &amp; host it</li>
+
+<li>Redistribute it under FOSS license</li>
+</ol>
+
+<p class="size">searx is a meta search engine which is a Free and Open Source Software under AGPL license which gives us the FREEDOM to Use the Source Code, Study the Source Code, Share the Source Code and Improve &amp; Distribute the Source Code but in Free Software licence alone. And searx is written in python, which can be run in localhost. So we will be utuising this instance for example. But this can be even said as aawareness building for searx as a search engine :slight_smile: </p>
+
+<h3>Prerequisite:</h3>
+We need these tools to be installed.</p>
+
+<ul class="size">
+<li>GNU\Linux based machine ( I'm working on debian based )</li>
+
+<li>Python3</li>
+
+<li>PIP</li>
+</ul>
+
+<h3>1. Download the source code from the official repo &amp; possibly we can use two methods</h3>
+
+<ul class="size">
+<li><p>Install Git and Clone the repo</p>
+
+<pre class="size"><code>    sudo apt install git
+    git clone git@github.com:asciimoo/searx.git
+</code></pre></li>
+
+<li><p>Download from the official repo in zip format and extract it.</p>
+
+<p><a href="https://github.com/asciimoo/searx">https://github.com/asciimoo/searx</a></p></li>
+</ul>
+
+<blockquote>
+  <p><img class="images" src="4ffs1.png" alt="img1" /></p>
+  
+  <p class="size">Click on <code>Download ZIP</code>, save it in local machine
+      Extract the searx-master zip file to</p>
+</blockquote>
+
+<p class="size">We are able to download and study the source code of searx is open and public can access it. We can even go a step ahead and host it on our server too.</p>
+
+<h3>2. Run searx in localhost</h3>
+
+<ul class="size">
+<li><p>Open Terminal <code>ctrl+Alt+t</code> - This command opens the terminal</p></li>
+
+<li><p>Install Python</p>
+
+<pre class="size"><code><p>    sudo add-apt-repository ppa:jonathonf/python-3.6
+    sudo apt-get update &amp;&amp;
+    sudo apt-get install python3.6</p></code></pre></li>
+
+<li><p>Install PIP</p>
+
+<p><pre class="size"><code>    sudo apt install python3-pip
+    sudo apt install build-essential python3-dev</p></code></pre></li>
+
+<li><p>Install &amp; Upgrade tools from requirement list</p>
+
+<p><pre class="size"><code>    cd searx
+    sudo ./manage.sh update_packages</p></code></pre></li>
+
+<li><p>Run searx</p>
+
+<p>python searx/webapp.py</p>
+
+<ul>
+<li>Output</li></ul>
+
+<blockquote>
+  <p class="size">z@zphoenix-pc:~/searx$ python searx/webapp.py 
+  WARNING:searx.webapp: <strong>* Deprecation Warning *</strong>
+  WARNING:searx.webapp: Python2 is deprecated</p>
+  
+  <ul class="size">
+  <li>Serving Flask app "webapp" (lazy loading)</li>
+  
+  <li>Environment: production
+  WARNING: This is a development server. Do not use it in a production deployment.
+  Use a production WSGI server instead.</li>
+  
+  <li>Debug mode: off
+  INFO:werkzeug: * Running on http://127.0.0.1:8888/ (Press CTRL+C to quit)</li></ul>
+</blockquote></li>
+
+<li><p>So in our Local Machine i.e. Localhost or 127.0.0.1 in the port vale 8888 searx would be running</p>
+
+<p>Use
+  localhost:8888 
+  or 
+  127.0.0.1:8888</p>
+
+<p>Hurray Successfull !!!!!
+<img class="images" src="4ffs2.png" alt="img1" /></p></ul>
+
+<p class="size"><em>Note :</em>  <code>ctrl + c</code> will abort the hosting in localhost</p></li>
+
+
+<h3>3. Lets do some changes to the Source Code &amp; host it again</h3>
+For simplicity case let's try two task or modification</p>
+
+<ul class="size">
+<li><p>Lets change the homepage Logo of Searx in <strong>Oscar Theme</strong></p></li>
+
+<li><p>Lets edit the footer in <strong>Oscar Theme</strong></p></ul>
+
+<p class="size">To talk about the searx source code, it have 6 different theme, amongst it we shall work on Oscar Theme. So for UI of searx they have used the concept of template and static inside which you will find different themes. So firstly let's try to change homepage logo</p>
+
+<p class="size"><img class="images" src="searx_logo.png" alt="img1 | 230x51" />
+<strong>instead of</strong> <br />
+<img class="images" src="logo_searx_a.png" alt="img1 | 160x60" /></p>
+
+<p class="size">In index.html change the name of the image accordingly to get the difference.</p>
+
+<p class="size">And in the same footer in base.html file to the below content</p></li>
+
+
+  <p class="size">Hosted by GLUG PESCE, Mandya - searx - a privacy-respecting, hackable metasearch engine
+  glugpesce.github.io</p>
+
+
+<p><img class="images" src="4ffs3.png" alt="img1" /></p>
+
+<ul class="size">
+<li><p>Run searx</p>
+
+<pre><code>    cd searx
+    python searx/webapp.py
+</code></pre></li>
+</ul>
+
+<p class="size">We were not just able to study the source code but modify it. A little step ahead is to re-distribute the modified version. In this case we have just customised the look and are re-distributing the source code.</p>
+
+<h3>4. Redistribute it under FOSS license</h3>
+Now we have modified searx source code, so let's publish it under GPL v3 license and upload the source code to 
+<a href="https://gitlab.com/">Gitlab</a> and also host in the same platform as it provides as <a href="https://docs.gitlab.com/ee/user/project/pages/">gitlab pages</a>.</p>
+
+<p class="size"><em>Note</em> : Make sure you complete git configuration earlier.</p>
+
+<pre class="size"><code>    git clone git@gitlab.com:glugpesce.searx/glugpesce.searx.gitlab.io.git
+    cd glugpesce.searx.gitlab.io.git
+    git status
+    git add
+    git commit -m "Initial upload - searx"
+    git push
+</code></pre>
+
+<p class="size">Now the source code is updated to gitlab repo, next step lets add license to the repo. Since we are following FOSS and four freedom of free software, we shall redistribute it under free license alone !!!</p>
+
+<h3>Conclusion</h3>
+
+<p class="size">Searx is just one such example taken here, but out there we have hell lot of free softwares to which we can contribute by adding a feature or checking for bug and correct if possible or just contribute in documentation there are many options open. 
+The four freedoms of free software allows and guarantee the user the freedom to use as we wish, as we downloaded and read the source code. Planned to host it on our server.  Next it allows the user to study and use it according to our will and wish. So we got an opportunity to customise searx as we wished !!!. So few may like our customisation so why not redistribute it for others? That's possible in free software. And finally others could see us on our repo help us, and help the community. We went to an extent of hosting it which gives an chance for others to even try our customisation.</p>
+
+<p class="size">So free softwares are must !!! Only when we as a community get it grow, we all grow along with the community. Always remember let's not get DENIED for any reason. Always remember contribution is key to growth.</p>
+
+<hr style="width:100%;text-align:left;margin-left:0">
+
+<h2><p>Tags</h2></p>
+    <p>* Free software * Four Freedoms * Implementation * Git * Gitlab * Account * Commands * searx * FOSS * GLUG-PESCE * Mandya </p>
+  </main>
+</div>
+<footer class="footer">
+  <div class="footer-wrapper text-left">
+            <div class="container">
+                <div class="row">
+                        <div class="col-sm">
+                          <ul>
+                        <li><span>&nbsp;&nbsp;&nbsp;Stay tuned for more info on <a href="https://mastodon.social/@glugpesce" target="_blank">mastodon</a> </li>
+<br>
+                        <li><span class="spanned">&nbsp;&nbsp;&nbsp;Follow Us</span></li>
+                      <br>
+                      <li><a style="text-decoration: none;" href="https://mobile.twitter.com/GlugPesce?s=09" target="_blank">&nbsp;&nbsp;&nbsp;<i class="fa fa-twitter fa-2x"></i>&nbsp;&nbsp;&nbsp;</a>
+                        <a style="text-decoration:none;" href="https://www.facebook.com/glug.pesce.3" target="_blank"><i class="fa fa-facebook fa-2x"></i> &nbsp;&nbsp;&nbsp;</a>
+                       <a style="text-decoration: none;" href="https://instagram.com/glugpesce?igshid=dqku04i0gpli" target="_blank"><i class="fa fa-instagram fa-2x"></i> &nbsp;</a></li>
+                      </ul><br> <br>
+                        </div>
+
+                        <div class="col-sm"><ul>
+                        <li><span id="imp-links">&nbsp;&nbsp;&nbsp;Important links</span></li>
+                        
+                        <li><a class="nav-link" href="http://www.pescemandya.org/">P.E.S.C.E,Mandya</a></li>
+                        
+                        <li><a class="nav-link" href="http://discuss.fsmk.org">FSMK Discuss</a></li>
+                        <li><a class="nav-link" href="http://fsmk.org">Free Software Movement Karnataka</a></li>
+                        <li><a class="nav-link" href="http://fsmi.in">Free Software Movement India</a></li>
+                      <li><a class="nav-link" href="http://fsf.org">Free Software Foundation</a></li>
+                        </ul> <br> <br>
+                      </div>
+
+
+                        <div class="col-sm">
+                          <ul>
+                            <li><span id="imp-links">&nbsp;&nbsp;&nbsp;GLUG-PESCE</span></li>
+                            <li><a class="nav-link" href="../index.html">Home</a></li>
+                          </li><a class="nav-link" href="../event.html">Events</a></li>
+                        </li><a class="nav-link" href="../blogs.html">Blogs</a></li>
+                        </li><a class="nav-link" href="../localisation.html">Localisation</a></li>
+                    </li><a class="nav-link" href="../gallery.html">Gallery</a></li>
+                </li><a class="nav-link" href="../teamm.html">Team</a></li>
+                          </ul>
+                        </div>
+                </div>    
+        </div>
+
+        <div id="copyleft">CopyLeft. All Wrongs Reserved ! <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+            This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></div>
+        </div>
+      </footer>
+              <script
+              src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+              integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+              crossorigin="anonymous"
+            ></script>
+            <script
+              src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+              integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+              crossorigin="anonymous"
+            ></script>
+            <script
+              src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+              integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+              crossorigin="anonymous"
+            ></script>
+   
+</body>
+    </html>

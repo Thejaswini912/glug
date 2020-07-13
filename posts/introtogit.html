@@ -1,0 +1,387 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <style>
+ol,ul{
+  font-size: 1.2em;
+}
+      pre{
+        color:white;
+        font-size:1.1em;
+      }
+      code{
+        font-size:1.1em;
+      }
+      body,
+      html {
+        background-color: #173f5f;
+        color: white;
+    
+      }
+      c{
+        font-size:1.2em;
+      }
+      h1,h2
+      {
+        color: #3caea3;
+      }
+
+      h3,h5{
+        color:#f6d55c;
+      }
+      article,p {
+        font-size: 1.2em;
+      }
+      #imp-links {
+  font-size: 1.2em;
+  color: #3caea3;
+}
+        .footer-wrapper {
+  padding-top:20px;
+          bottom: 0px;
+          left: 0;
+          width: 100%;
+          height: auto;
+          background-color: white;
+          color: #173f5f;
+         
+        }
+        .footer-wrapper ul {
+          list-style: none;
+        }
+        #copyleft {
+          padding-top: 40px;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+.images{
+  width:100%;
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="navbar-brand">GLUG PESCE, Mandya</div>
+        <button
+          class="navbar-toggler button-outline-light"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="../index.html">Home</a>
+            <a class="nav-item nav-link" href="../event.html">Events</a>
+            <a class="nav-item nav-link" href="../blogs.html">Blog</a>
+            <a class="nav-item nav-link" href="../localisation.html">Localisation</a>
+            <a class="nav-item nav-link" href="../gallery.html">Gallery</a>
+            <a class="nav-item nav-link" href="../teamm.html">Team</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container c">
+      <h1>Introduction to Git</h1>
+      <h5>Published on Oct 31, 2019 by zphoenix</h5> <hr>
+      <img class="images"
+        src="https://cdn-images-1.medium.com/max/400/1*9VlqcleV4uhord3IzL0pGQ.jpeg"
+        alt=""
+      />
+      <h3>Contents</h3>
+      <ol>
+        <li>Git</li>
+        <li>Why Git ?</li>
+        <li>Installation and Configuration Settings</li>
+        <li>Existing project to Git Repository</li>
+        <li>Commit</li>
+        <li>Clone and Push a repository</li>
+        <li>
+          Create a branch for Issues, Push, Merge, Delete a repository after
+          commit
+        </li>
+      </ol>
+      <img class="images"
+        src="https://cdn-images-1.medium.com/max/400/1*Ju-X7VzkCnYT7UngdT26Qw.png"
+        alt=""
+      />
+      <h3>1. Git</h3>
+      <p>
+        Git is a Open-Source distributed control system to manage changes to
+        source code. It was developed by Linus Torvalds.
+      </p>
+      <h3>2. Why Git?</h3>
+      <p>
+        Most widely used control system in the world. It keeps track of all the
+        modification to the code. Mistakes or error in source code can be
+        overcome by looking at the previous changes. And Git repository hosting
+        service i.e., Gitlab, Mercury, GitHub few more.
+      </p>
+
+      <h3>3a. Installation</h3>
+      <ul>
+        <li>
+          <h4>GNU/Linux Users</h4>
+        <pre><code>
+sudo apt-get install git    or
+sudo add-apt-repository ppa:git-core/ppa 
+sudo apt update 
+sudo apt install git 
+        </code></pre>
+       </li>
+
+        <li>
+          <h4>Windows Users</h4>
+
+          Download from link : www.git-scm.com/downloads <br />
+          Select OS and 32bit or 64bit based on your requirement.
+        </li>
+      </ul>
+
+      <h3>3b. Configuration & Production of SSH key</h3>
+      <h4>Configuring</h4>
+
+      <pre><code>
+git config --global user.name "UserName"
+git config --global user.email "UserName@gmail.com"
+git config --list <br>
+git config --help #For manual page or help page
+      </code></pre>
+      
+      
+
+      <h4>Production of SSH Key</h4>
+      <pre><code>
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+      </code></pre>
+
+      <ul>
+        <li>
+          GNU\Linux User <br />
+          <pre><code>xclip -sel clip <~/.ssh/id_rsa.pub</code></pre>
+          
+        </li>
+        <li>
+          Windows User : <br />
+
+          Copy id_rsa.pub content by going to C drive -> User -> UserAccount ->
+          .ssh
+        </li>
+      </ul>
+
+      <h3>4. Existing project to Git Repository</h3>
+      <h4>Navigate to project folder from terminal</h4>
+      <ul>
+        <li>
+           To Git file will be created if the command was executed correctly
+          <br />
+          <code>git init</code> 
+        </li>
+        <li>
+          staging area : The directory we use to organize files that are tracked
+          and committed before pushing it to the repo. <br />
+          <code>git status</code> 
+        </li>
+
+        <li>
+          To add all files & To add a single file <br />
+          <code>git add -A git add filename</code> 
+          
+        </li>
+
+        <li>
+          To remove all files & To Remove files from staging area : <br />
+          
+          <code>git reset git reset filename</code>
+        </li>
+      </ul>
+
+      <h3>5. Commit</h3>
+      <ul>
+        <li>
+          To commit <br />
+          <code>git commit -m “First Commit” #-m is message passed</code>
+         
+        </li>
+        <li>
+          To can view our commits <br />
+          <code>git log</code>
+        </li>
+      </ul>
+
+      <h3>6.To can view our commits</h3>
+      <br />
+      To track an existing repo
+      <ul>
+        <li>
+          git clone <br />
+          <br />
+
+          Example : <br />
+
+          mkdir first git clone ls -la #Shows all files in directory git diff
+          #shows any changes made git add -A git commit -m "Updated first
+          commit"
+        </li>
+      </ul>
+      <br />
+      If several people are working on a single project
+      <ul>
+        <li>
+          locations where our repo will get external commit or push <br />
+         <code>git remote -v</code> 
+        </li>
+        <li>
+          list all git branches <br />
+        <code>git branch -a</code>  
+        </li>
+        <li>
+          pull changes from remote repo <br />
+        <code>git pull origin master</code>  
+        </li>
+        <li>
+          pushes changes to remote repo i.e., master branch <br />
+       <code>git push origin master</code>  
+        </li>
+      </ul>
+
+      <h3>
+        7. Create a branch for Issues, Push, Merge, Delete a repository after
+        commit
+      </h3>
+
+      <strong>Branch : </strong>Usually a developer will create his/her own
+      branch then add things or report.
+      <br />
+      git branch &lt;branch name&gt;
+
+      <ul>
+        <li>
+          shows all branches <br />
+        <code>git branch</code> 
+        </li>
+        <li>
+          switches branch &lt;br&gt; &lt;br&gt; <br />
+         <code>git checkout</code> 
+        </li>
+        <li>
+          Example : same example… make some changes in file and then <br />
+         <code>git add -A git commit -m “Update 2”</code> 
+        </li>
+      </ul>
+      <h4>Push :</h4>
+      <ul>
+        <li>
+          Origin is the name of and followed by branch name <br />
+        <code>git push -u origin git branch -a</code>  
+        </li>
+      </ul>
+      <br />
+      <h4>Merge :</h4>
+<pre><code>
+  git checkout master
+  git pull origin master
+  git branch --merged
+  git merge &gt;branch name&lt;
+  git push origin master
+</code></pre>
+
+      <h4>Delete :</h4>
+<pre><code>
+  git branch --merged <br>
+  #delete in directory
+  git branch -d &gt;branch name&lt; <br>
+  git branch -a 
+  git push origin --delete &gt;branch name&lt;
+  git branch -a
+</code></pre>
+      
+
+    </div>
+    <footer class="footer">
+      <div class="footer-wrapper text-left">
+                <div class="container">
+                    <div class="row">
+                            <div class="col-sm">
+                              <ul>
+                            <li><span>&nbsp;&nbsp;&nbsp;Stay tuned for more info on <a href="https://mastodon.social/@glugpesce" target="_blank">mastodon</a> </li>
+    <br>
+                            <li><span class="spanned">&nbsp;&nbsp;&nbsp;Follow Us</span></li>
+                          <br>
+                          <li><a style="text-decoration: none;" href="https://mobile.twitter.com/GlugPesce?s=09" target="_blank">&nbsp;&nbsp;&nbsp;<i class="fa fa-twitter fa-2x"></i>&nbsp;&nbsp;&nbsp;</a>
+                            <a style="text-decoration:none;" href="https://www.facebook.com/glug.pesce.3" target="_blank"><i class="fa fa-facebook fa-2x"></i> &nbsp;&nbsp;&nbsp;</a>
+                           <a style="text-decoration: none;" href="https://instagram.com/glugpesce?igshid=dqku04i0gpli" target="_blank"><i class="fa fa-instagram fa-2x"></i> &nbsp;</a></li>
+                          </ul><br> <br>
+                            </div>
+    
+                            <div class="col-sm"><ul>
+                            <li><span id="imp-links">&nbsp;&nbsp;&nbsp;Important links</span></li>
+                            <li><a class="nav-link" href="http://www.pescemandya.org/">P.E.S.C.E,Mandya</a></li>
+                            
+                            <li><a class="nav-link" href="http://discuss.fsmk.org">FSMK Discuss</a></li>
+                            <li><a class="nav-link" href="http://fsmk.org">Free Software Movement Karnataka</a></li>
+                            <li><a class="nav-link" href="http://fsmi.in">Free Software Movement India</a></li>
+                          <li><a class="nav-link" href="http://fsf.org">Free Software Foundation</a></li>
+                            </ul> <br> <br>
+                          </div>
+    
+    
+                            <div class="col-sm">
+                              <ul>
+                                <li><span id="imp-links">&nbsp;&nbsp;&nbsp;GLUG-PESCE</span></li>
+                                <li><a class="nav-link" href="../index.html">Home</a></li>
+                              </li><a class="nav-link" href="../event.html">Events</a></li>
+                            </li><a class="nav-link" href="../blogs.html">Blogs</a></li>
+                            </li><a class="nav-link" href="../localisation.html">Localisation</a></li>
+                        </li><a class="nav-link" href="../gallery.html">Gallery</a></li>
+                    </li><a class="nav-link" href="../teamm.html">Team</a></li>
+                              </ul>
+                            </div>
+                    </div>    
+            </div>
+    
+            <div id="copyleft">CopyLeft. All Wrongs Reserved ! <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+                This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></div>
+            </div>
+          </footer>
+            <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+          ></script>
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+          ></script>
+          <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+          ></script>
+   
+  </body>
+</html>

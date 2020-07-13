@@ -1,0 +1,374 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="blogs.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body,
+      html {
+        background-color: #173f5f;
+        color: white;
+      }
+      h1
+      {
+        color: #3caea3;
+      }
+ol,ul{
+  font-size:1.2em;
+}
+      h3,h5{
+        color:#f6d55c;
+      }
+      article,p {
+        font-size: 1.2em;
+      }
+
+      #imp-links {
+  font-size: 1.2em;
+  color: #3caea3;
+}
+        .footer-wrapper {
+  padding-top:20px;
+          bottom: 0px;
+          left: 0;
+          width: 100%;
+          height: auto;
+          background-color: white;
+          color: #173f5f;
+         
+        }
+        .footer-wrapper ul {
+          list-style: none;
+        }
+        #copyleft {
+          padding-top: 40px;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="navbar-brand">GLUG PESCE, Mandya</div>
+        <button
+          class="navbar-toggler button-outline-light"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="../index.html">Home</a>
+            <a class="nav-item nav-link" href="../event.html">Events</a>
+            <a class="nav-item nav-link" href="../blogs.html">Blog</a>
+            <a class="nav-item nav-link" href="../localisation.html">Localisation</a>
+            <a class="nav-item nav-link" href="../gallery.html">Gallery</a>
+            <a class="nav-item nav-link" href="../teamm.html">Team</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <h1>Introduction to GNU/Linux and Terminal Commands</h1>
+      <h5>Published on Mar 4, 2019 by zphoenix</h5> <hr>
+      <h3>What is GNU/Linux?</h3>
+      <p>
+        It is an Operating System that manages a computer. It is entirely free
+        and large number of developers spread over the world who always
+        contribute for its development and existence till date. GNU/Linux is the
+        core component and have different products which are
+        distributions(distros) that vary with appearance and few working
+        mechanism and functions like Internet/Networking, or Multimedia and
+        Graphics and etc. There are hell lot of Free Software which are not just
+        free but quality applications too. In simple term GNU/Linux is a
+        collection of many programs, applications, libraries, developer tools,
+        even games which talks with hardware of a computer.
+      </p>
+      <img
+        src="https://cdn-images-1.medium.com/max/800/0*Z2Jl3oXVUW43JSDh"
+        alt=""
+      />
+
+      <p>
+        The larger picture of a **GNU/Linux** or any **Free Software** are it
+        promotes users **Freedom to run, copy, distribute, study, change and
+        improve** the Application. Free software refers to four kinds of
+        freedom,
+      </p>
+
+      <p>The freedom to run the program, for any purpose.</p>
+      <p>
+        The freedom to study how the program works, and adapt it to your needs.
+        Access to the source code.
+      </p>
+      <p>The freedom to redistribute copies to others.</p>
+
+      <p>
+        The freedom to improve the program, and release your improved to public,
+        so that the whole community benefits. And the source code should be
+        accessed by public.
+      </p>
+
+      <p>
+        GNU/Linux is based on <strong>Command Line Interface (CLI)</strong> and
+        nowadays it supports both
+        <strong>CLI and Graphical User Interface (GUI)</strong>. Most of the
+        functions like to create or delete a file/folder/directory, execute a
+        program, install or uninstall, view documents, and etc can be done using
+        a Terminal(also known as shell). Getting started with Terminal will ease
+        most of your work starting from using a computer for viewing or managing
+        database to working on a project to running or deploying a server and
+        many more cool stuffs!!!
+      </p>
+
+      <h3>Getting started with TERMINAL</h3>
+
+      <img
+        src="https://cdn-images-1.medium.com/max/600/1*J5bg4fxaOy4atKegwMVM-A.png"
+        alt=""
+      />
+      <p>
+        Large portions of GNU/Linux functionality are achieved by using the
+        terminal. A terminal is a <strong>command-line interpreter</strong> that
+        executes user inputted commands. <strong>Bash</strong> is a common
+        default shell among many Linux distributions. Learning few basic
+        commands listed below will make it easy to use any GNU/Linux OS.<br />
+        <strong>Commands (Terminal is Case-Sensitive)</strong>
+      </p>
+      <ol>
+        <li>
+          To Open the Terminal <br />
+          $ Ctrl + Alt + T $ Ctrl + Shift+ T (To open terminal in tab fashion)
+        </li>
+        <br />
+        <li>
+          To end a execution <br />
+          $ Ctrl + C
+        </li>
+        <br />
+        <li>
+          Clearing the Terminal Screen <br />
+          $ clear or $ Ctrl + L
+        </li>
+        <br />
+        <li>
+          To Auto-complete files or directory names <br />
+          TAB (press Tab button)
+        </li>
+        <br />
+        <li>
+          To show all possible files or directory <br />
+          TAB TAB (press Tab button twice)
+        </li>
+        <br />
+        <li>
+          For any Help or Information on Commands <br />
+          $ man (To quit a man page use ‘q’ button) or $ –help
+        </li>
+        <br />
+        <li>
+          ls stands for list. <br />
+          $ ls $ ls -a (lists all the files) $ ls -l (lists details like owner,
+          date, type, etc.) $ ls - *.pdf (lists all the files of type pdf, not
+          just pdf it can be other type extensions too)
+        </li>
+        <br />
+        <li>
+          cd is Change Directory which allows to traverse through directories
+          and file paths <br />
+          $ cd or $ cd ~ (Changes the current directory to Root Directory) $ cd
+          - (Changes the current directory to previous directory) $ cd (Changes
+          the current directory to directory)
+        </li>
+        <br />
+        <li>
+          To display the Current directory <br />
+          $ pwd (Working Directory)
+        </li>
+        <br />
+        <li>
+          To Copy file/Directories <br />
+          $ cp (Copies file from source to destination) $ cp file1 file2 file3
+          ... dir (Copies the following files to) $ cp -i (Ask user confirmation
+          if the target file already exist) $ cp -p (preserves the attributes
+          such as time, mode, ownership of the source file)
+        </li>
+        <br />
+        <li>
+          To Move file <br />
+          $ mv (Renames a given file or directory) $ mv -i (Ask user
+          confirmation if the new file already exists) $ mv -p (preserves the
+          attributes such as time, mode, ownership of the source file) $ mv -f
+          (Force the move by overwriting the Destination file)
+        </li>
+        <br />
+        <li>
+          To Remove a file(Delete) <br />
+          $ rm file1 file2 file3 file4 (Removes the given files) $ rm -i (Ask
+          for user confirmation) $ rm -r dir1 dir2 dir3 (Removes the given
+          Directories including contents) $ rm -f (Force remove)
+        </li>
+        <br />
+        <li>
+          Create or Remove Directories <br />
+          $ mkdir dir1 dir2 dir3 (Creates directories with given names) $ touch
+          $ rmdir dir1 dir2 dir3 (Removes the given directories only when they
+          are empty) $ rm -r (Removes the given directories and no need to be
+          empty) $ rm -rf (Removes the given directories without asking)
+        </li>
+        <br />
+
+        <li>
+          Displaying Contents of files <br />$ cat file1 file2 file3
+          (Concatenates and outputs the contents of the files) $ vi (Edit the
+          given file)
+        </li>
+        <br />
+        <li>
+          To Search files <br />
+          $ grep
+        </li>
+        <br />
+
+        <li>
+          Ordering
+          <br />
+          $ sort (Sorts the lines in the file in Character order and outputs
+          them) $ sort -r (Sorts the lines in reverse order in the file in
+          Character order and outputs them)
+        </li>
+        <br />
+
+        <li>Echo <br />$ echo</li>
+        <br />
+
+        <li>Find <br />$ find</li>
+        <br />
+
+        <li>To display the current User <br />$ whoami</li>
+        <br />
+        <li>
+          Similarly date, calendar, time, and others can be used <br />$ date $
+          calendar $ time
+        </li>
+        <br />
+        <li>Compressing and Uncompressing <br />$ gzip $ gunzip</li>
+        <br />
+
+        <li>
+          To close terminal <br />Ctrl + Shift + W (terminal tab) Ctrl + Shift +
+          Q (entire terminal)
+        </li>
+        <br />
+      </ol>
+      <h3>Conclusion</h3>
+      <p>
+        When we have Free Software for very prominent proprietor software which
+        gives the same or better experience, Why not use it ? The word free in
+        Free Software is free as in Freedom, the source code is open to all. Few
+        may feel the source code is open, any one can place a malware and
+        upload, it is reasonable. But the truth is for every free software there
+        is a** Community of developers** working on it and developers are
+        assigned roles and any new updates or upgrades, needs to be reviewed by
+        them(prominent person working in the community like editors, reviewer,
+        etc). So whenever someone tries to upload a malware or such, its removed
+        when developers detect them.
+      </p>
+
+      <p>
+        So people working on GNU/Linux get the best use and experience Free
+        Software. Most importantly people interested in
+        <strong>Free Software and its philosophy</strong> need not contribute
+        only by coding and development but
+        <strong>spreading the knowledge</strong>
+        of Free Software to our surrounding is also a big contribution for a
+        better <strong>FREE DIGITAL SOCIETY</strong>
+        that we live in.
+      </p>
+    </div> <br><br>
+    <footer class="footer">
+      <div class="footer-wrapper text-left">
+                <div class="container">
+                    <div class="row">
+                            <div class="col-sm">
+                              <ul>
+                            <li><span>&nbsp;&nbsp;&nbsp;Stay tuned for more info on <a href="https://mastodon.social/@glugpesce" target="_blank">mastodon</a> </li>
+    <br>
+                            <li><span class="spanned">&nbsp;&nbsp;&nbsp;Follow Us</span></li>
+                          <br>
+                          <li><a style="text-decoration: none;" href="https://mobile.twitter.com/GlugPesce?s=09" target="_blank">&nbsp;&nbsp;&nbsp;<i class="fa fa-twitter fa-2x"></i>&nbsp;&nbsp;&nbsp;</a>
+                            <a style="text-decoration:none;" href="https://www.facebook.com/glug.pesce.3" target="_blank"><i class="fa fa-facebook fa-2x"></i> &nbsp;&nbsp;&nbsp;</a>
+                           <a style="text-decoration: none;" href="https://instagram.com/glugpesce?igshid=dqku04i0gpli" target="_blank"><i class="fa fa-instagram fa-2x"></i> &nbsp;</a></li>
+                          </ul><br> <br>
+                            </div>
+    
+                            <div class="col-sm"><ul>
+                            <li><span id="imp-links">&nbsp;&nbsp;&nbsp;Important links</span></li>
+                            
+                            <li><a class="nav-link" href="http://www.pescemandya.org/">P.E.S.C.E,Mandya</a></li>
+                            
+                            <li><a class="nav-link" href="http://discuss.fsmk.org">FSMK Discuss</a></li>
+                            <li><a class="nav-link" href="http://fsmk.org">Free Software Movement Karnataka</a></li>
+                            <li><a class="nav-link" href="http://fsmi.in">Free Software Movement India</a></li>
+                          <li><a class="nav-link" href="http://fsf.org">Free Software Foundation</a></li>
+                            </ul> <br> <br>
+                          </div>
+    
+    
+                            <div class="col-sm">
+                              <ul>
+                                <li><span id="imp-links">&nbsp;&nbsp;&nbsp;GLUG-PESCE</span></li>
+                                <li><a class="nav-link" href="../index.html">Home</a></li>
+                              </li><a class="nav-link" href="../event.html">Events</a></li>
+                            </li><a class="nav-link" href="../blogs.html">Blogs</a></li>
+                            </li><a class="nav-link" href="../localisation.html">Localisation</a></li>
+                        </li><a class="nav-link" href="../gallery.html">Gallery</a></li>
+                    </li><a class="nav-link" href="../teamm.html">Team</a></li>
+                              </ul>
+                            </div>
+                    </div>    
+            </div>
+    
+            <div id="copyleft">CopyLeft. All Wrongs Reserved ! <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+                This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></div>
+            </div>
+          </footer>
+            <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+          ></script>
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+          ></script>
+          <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+          ></script>
+
+  </body>
+</html>

@@ -1,0 +1,42 @@
+h1 {
+  color: white;
+  text-align: center;
+}
+
+#imp-links {
+  font-size: 1.2em;
+  color: #3caea3;
+}
+
+main {
+  background-color: #173f5f;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.links {
+  padding-top: 10px;
+}
+.t-color {
+  color: #f6d55c;
+}
+.t-small {
+  color: #3caea3;
+}
+.footer-wrapper {
+  padding-top: 10px;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  color: #173f5f;
+}
+.footer-wrapper ul {
+  list-style: none;
+}
+#copyleft {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  /* padding-bottom: 70px; */
+  text-align: center;
+}

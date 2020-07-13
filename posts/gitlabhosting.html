@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="blogs.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <style>
+        body,
+        html {
+          background-color: #173f5f;
+          color: white;
+        }
+        h1,h2
+        {
+          color: #3caea3;
+        }
+  
+        h3,h5{
+          color:#f6d55c;
+        }
+        article,p {
+          font-size: 1.2em;
+        }
+  pre{
+    color:white;
+  }
+    
+#imp-links {
+  font-size: 1.2em;
+  color: #3caea3;
+}
+        .footer-wrapper {
+  padding-top:20px;
+          bottom: 0px;
+          left: 0;
+          width: 100%;
+          height: auto;
+          background-color: white;
+          color: #173f5f;
+         
+        }
+        .footer-wrapper ul {
+          list-style: none;
+        }
+        #copyleft {
+          padding-top: 40px;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+
+
+
+
+      </style>
+    </head>
+    <body>
+      <header>
+        <nav class="navbar navbar-expand-lg bg-light navbar-light">
+          <div class="navbar-brand">GLUG PESCE, Mandya</div>
+          <button
+            class="navbar-toggler button-outline-light"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" href="../index.html">Home</a>
+              <a class="nav-item nav-link" href="../event.html">Events</a>
+              <a class="nav-item nav-link" href="../blogs.html">Blog</a>
+              <a class="nav-item nav-link" href="../localisation.html">Localisation</a>
+              <a class="nav-item nav-link" href="../gallery.html">Gallery</a>
+              <a class="nav-item nav-link" href="../teamm.html">Team</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <div class="container">
+    <h1>HOSTING A PROFILE WEBSITE IN GITLAB</h1>
+    <h5>Author: Nidhi K S, May 6, 2020</h5> <hr>
+    
+    <p>
+        Hosting a website which you have designed is everyone's dream. 
+        If its yours too then read along the blog and have in fact hosted too!</p>
+    
+    <h3>Prerequisites:</h3>
+    
+    <ul class="size">
+    <li>A GNU Linux machine.</li>
+    
+    <li>Basic Knowledge on HTML and CSS.</li>
+    
+    <li>An enthusiasm to learn.</li>
+    </ul>
+    
+    <h3>Creating a Gitlab account:</h3>
+    
+    <p class="size">Click on <a href="https://gitlab.com/">https://gitlab.com/</a> 
+          -> Select the  register  button and create an account.</p>
+    
+    <h3>Installing Git &amp; Configuaration</h3>
+
+    <h3><p>a. Installation</p></h3>
+    <pre class="size"><code>    sudo apt install git
+    or
+    sudo add-apt-repository ppa:git-core/ppa
+    sudo apt update
+    sudo apt install git</code></pre>
+    
+    <h3><p>b. Configuration</p></h3>
+    
+    <pre class="size"><code>    git config --global user.name  "Username"
+    git config --global  user.email “UserName@gmail.com”
+    git config --list</code></pre>
+    
+    <h3><p>Production of SSH key:</p></h3>
+    
+    <p class="size">
+        The public key is generated and it is given to Gitlab. 
+        The public key is like the handshake between your local machine and the gitlab server.</p>
+    
+    <pre class="size"><code>    ssh-keygen -t rsa -b 4096 -C “@nidhiks.excellence@gmail.com”
+    eval $(ssh-agent -s)
+    ssh-add ~/.ssh/id_rsa</code></pre>
+    
+    <p class="size">Xclip is a tool used to copy the public key generated:</p>
+    
+    <pre class="size"><code>    sudo apt-get install xclip
+    xclip -sel clip &lt; ~/.ssh/id_rsa.pub</code></pre>
+    
+    <p class="size">Now the public key is copied to your clipboard.</p> 
+    
+    <ul class="size">
+    <li><p>Log in to your gitlab account at <a href="https://gitlab.com/">https://gitlab.com/</a> </p></li>
+    
+    <li><p>Go to settings which is in right top corner.</p></li>
+    
+    <li><p>And select SSH key from the dropdown menu and you will be redirected to a page where you have to paste the ssh key and put add a title i.e., the laptop you are using. (ex:Lenovo,HP,Dell)</p></li>
+    </ul>
+   
+    <p><strong>Hurray!!!The configuaration is complete.</strong></p>
+    
+    <h3>Creating a new repository</h3>
+    
+    <ul class="size">
+    <li><p>Click the Gitlab icon present in top left corner. It redirects to the home profile page.</p></li>
+    
+    <li><p>Click on Newproject button and give appropriate name.</p></li>
+    </ul>
+    
+    <h3>Basic Git commands</h3>
+    
+    <ul class="size">
+    <li><p>Click on <a href="https://gitlab.com/Happysunshine/gitsession">https://gitlab.com/Happysunshine/gitsession .</a> 
+        You will get  a repository with 4 files.</p></li>
+    
+    <li><p>Now click on Fork.  #A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. </p></li>
+    
+    <li><p>Click on clone and copy the http path  or ssh path which you get. </p></li>
+    </ul>
+    
+    <p class="size">Get into Your terminal(CTRL+ALT+T)</p>
+    
+    <p class="size">Get into the directory where you want your repository to reside. Here I am considering home directory,</p>
+    
+    <ul class="size">
+    <li><p>intialises a git repository ang gives the creates a .git file</p>
+    
+    <pre class="size"><code>    git init </code></pre></li>
+    </ul>
+    
+    <p class="size">Copy the path which you copied in https or ssh</p>
+    
+    <ul class="size">
+    <li><p>Creates a folder called gitsession in your local machine.</p>
+    
+    <pre><code>    git clone "https://gitlab.com/Happysunshine/gitsession.git"</code></pre>
+    
+    <li><p>To verify get into your file manager and check for the folder named gitsession . In this case the folder will be in the home directory.</p></li>
+    
+    
+    <li><p>Change the back ground image and profile photo as required.</p></li>
+    
+    <li><p>change to your gitsession folder using cd command</p>
+    
+    <p><pre><code>    cd gitsession</p></li></code></pre></p>
+    
+    <li><p>To add all the files to your local machine execute</p>
+    
+    <p><pre><code>    git add -A     #To add all the files 
+    git add file name  #To add a particular file.</code></pre></p></li>
+    
+    <li><p>To commit the changes made to local repository execute</p>
+    
+    <p><pre><code>    git commit -m "Message"    #change the message appropriately.</code></pre></p></li>
+    
+    <li><p>To push the changes to git repository </p>
+    
+    <pre><p><code>    git push</code></p></pre></li></li>
+    </ul>
+    
+    <p class="size">To verify get into your account in gitlab and click on gitsession repo and you will find the files that you pushed.</p>
+    
+    <h2><p>Hurray!!!!  We have our repo ready. Time to host!!!</p></h2>
+    
+    <h3>Hosting:</h3>
+    
+    <ul class="size">
+    <li><p>Get into your gitsession folder.</p>
+    
+    <pre><code><p>   cd gitsession</p></code></pre></li>
+    
+    <li><p>To host your website we should add CI/CD configuaration file</p></li>
+    
+    <li><p>To create a file :</p>
+    
+    <pre><code>   touch .gitlab-ci.yml</code></pre></li>
+    
+    <li><p>To write in the file :</p>
+    
+    <pre><code>   nano gitlab-ci.yml
+    </code></pre></li>
+    </ul>
+    
+    <p class="size">You will directed to nano text editor. Add the following</p>
+    <p><pre class="size">   pages:
+   script:</pre></p>
+    <pre class="size"><code>    - mkdIntroductionir .public
+    - cp -r * .public
+    - mv .public public</code></pre>
+    <pre class="size">   artifacts:
+   paths:</pre>
+    <pre class="size"><code>    - public</code></pre>
+    <p><pre class="size">   only:</pre></p>
+    <pre class="size"><code>    - master</code></pre>
+    
+    <ul class="size">
+    <li><p>Press CTRL+S for save and CTRL+X to exit.</p></li>
+    
+    <li><p>Now lets push the changes to gitlab .</p>
+    
+    <p><pre><code>  cd gitsession
+  git add -A
+  git commit -m"Added CI/CD executable file"
+  git push</code></pre></p></li>
+    
+    <li><p>Go to your gitlab account. Verify if you have a executable file in gitsession repo.</p></li>
+    
+    <li><p>Go to setting in the right most corner and click on CI/CD from the dropbox and click on pipelines.</p></li>
+    
+    <li><p>You will get a tick mark and passed . If you click job it will be running ,once job is succeded your website is hosted.</p></li>
+    
+    <li><p>Select settings and  click on pages from the dropdown list.</p></li>
+    
+    <li><p>You will find a URL in which your website is hosted. 
+        <a href="https://happysunshine.gitlab.io/gitsession/">(ex:https://happysunshine.gitlab.io/gitsession/)</a></p></li>
+    </ul>
+    
+    <h2><p>CONGRATS!!!! YOU HAVE YOUR WEBSITE HOSTED!!!!</p></h2>
+    
+    <p class="size">Here you have your dream come true!!! Party hard for your success!!! </p>
+    
+    <p class="size">Feel free to contact me for any of your queries or share your happiness!!!</p>
+    
+    <h3><p>Telegram handle :  @Happysunshine_5</p></h3>
+
+    <hr style="width:100%;text-align:left;margin-left:0">
+
+    <h2><p>Tags</h2></p>
+    <p>* Profile Website * Hosting * Git * Gitlab * Account * Commands * GLUG-PESCE * Mandya </p>
+
+    </p>
+    
+  </div>
+  <footer class="footer">
+    <div class="footer-wrapper text-left">
+              <div class="container">
+                  <div class="row">
+                          <div class="col-sm">
+                            <ul>
+                          <li><span>&nbsp;&nbsp;&nbsp;Stay tuned for more info on <a href="https://mastodon.social/@glugpesce" target="_blank">mastodon</a> </li>
+  <br>
+                          <li><span class="spanned">&nbsp;&nbsp;&nbsp;Follow Us</span></li>
+                        <br>
+                        <li><a style="text-decoration: none;" href="https://mobile.twitter.com/GlugPesce?s=09" target="_blank">&nbsp;&nbsp;&nbsp;<i class="fa fa-twitter fa-2x"></i>&nbsp;&nbsp;&nbsp;</a>
+                          <a style="text-decoration:none;" href="https://www.facebook.com/glug.pesce.3" target="_blank"><i class="fa fa-facebook fa-2x"></i> &nbsp;&nbsp;&nbsp;</a>
+                         <a style="text-decoration: none;" href="https://instagram.com/glugpesce?igshid=dqku04i0gpli" target="_blank"><i class="fa fa-instagram fa-2x"></i> &nbsp;</a></li>
+                        </ul><br> <br>
+                          </div>
+  
+                          <div class="col-sm"><ul>
+                          <li><span id="imp-links">&nbsp;&nbsp;&nbsp;Important links</span></li>
+                          
+                          <li><a class="nav-link" href="http://www.pescemandya.org/">P.E.S.C.E,Mandya</a></li>
+                          
+                          <li><a class="nav-link" href="http://discuss.fsmk.org">FSMK Discuss</a></li>
+                          <li><a class="nav-link" href="http://fsmk.org">Free Software Movement Karnataka</a></li>
+                          <li><a class="nav-link" href="http://fsmi.in">Free Software Movement India</a></li>
+                        <li><a class="nav-link" href="http://fsf.org">Free Software Foundation</a></li>
+                          </ul> <br> <br>
+                        </div>
+  
+  
+                          <div class="col-sm">
+                            <ul>
+                              <li><span id="imp-links">&nbsp;&nbsp;&nbsp;GLUG-PESCE</span></li>
+                              <li><a class="nav-link" href="../index.html">Home</a></li>
+                            </li><a class="nav-link" href="../event.html">Events</a></li>
+                          </li><a class="nav-link" href="../blogs.html">Blogs</a></li>
+                          </li><a class="nav-link" href="../localisation.html">Localisation</a></li>
+                      </li><a class="nav-link" href="../gallery.html">Gallery</a></li>
+                  </li><a class="nav-link" href="../teamm.html">Team</a></li>
+                            </ul>
+                          </div>
+                  </div>    
+          </div>
+  
+          <div id="copyleft">CopyLeft. All Wrongs Reserved ! <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+              <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+              This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></div>
+          </div>
+        </footer>
+              <script
+              src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+              integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+              crossorigin="anonymous"
+            ></script>
+            <script
+              src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+              integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+              crossorigin="anonymous"
+            ></script>
+            <script
+              src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+              integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+              crossorigin="anonymous"
+            ></script>
+      
+    </body>
+    </html>
+
